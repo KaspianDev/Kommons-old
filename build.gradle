@@ -1,0 +1,82 @@
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "org.cadixdev.licenser" version "0.6.1"
+    id "maven-publish"
+    id "idea"
+}
+
+dependencies {
+    implementation project(path: ":spigot", configuration: "shadow")
+    implementation project(path: ":bungee", configuration: "shadow")
+    implementation project(path: ":universal", configuration: "shadow")
+    implementation project(path: ":chat", configuration: "shadow")
+    implementation project(path: ":console", configuration: "shadow")
+}
+
+allprojects {
+    group = "com.github.kaspiandev.kommons"
+    version = "1-SNAPSHOT"
+
+    apply plugin: "com.github.johnrengelman.shadow"
+    apply plugin: "java"
+    apply plugin: "maven-publish"
+    apply plugin: "org.cadixdev.licenser"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    tasks {
+        build {
+            dependsOn(shadowJar)
+        }
+    }
+
+    shadowJar {
+        dependsOn(jar)
+        archiveClassifier.set("")
+    }
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+    publishing {
+        publications {
+            shadow(MavenPublication) { publication ->
+                project.shadow.component(publication)
+                artifact sourcesJar
+                artifact javadocJar
+            }
+        }
+    }
+
+    license {
+        header = file("${rootProject.projectDir}/assets/HEADER")
+        properties {
+            name = "Kaspian"
+            year = Calendar.getInstance().get(1)
+        }
+    }
+
+    java.sourceCompatibility = JavaVersion.VERSION_17
+    java.targetCompatibility = JavaVersion.VERSION_17
+
+    javadoc.options.addStringOption('Xdoclint:none', '-quiet')
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+tasks {
+    build {
+        shouldRunAfter(allprojects.build)
+    }
+}

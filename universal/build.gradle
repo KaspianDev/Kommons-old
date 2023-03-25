@@ -1,0 +1,16 @@
+repositories {
+    maven {
+        url "https://repo.minebench.de/"
+    }
+}
+
+dependencies {
+    implementation "dev.dejvokep:boosted-yaml:1.3"
+    implementation "de.themoep:minedown:1.7.1-SNAPSHOT"
+}
+
+tasks {
+    shadowJar {
+        relocate("dev.dejvokep.boostedyaml", "com.github.kaspiandev.kommons.libs.dev.dejvokep.boostedyaml")
+    }
+}

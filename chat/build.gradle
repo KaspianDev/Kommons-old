@@ -1,0 +1,12 @@
+repositories {
+    maven {
+        url "https://repo.minebench.de/"
+    }
+}
+
+dependencies {
+    implementation project(path: ":universal", configuration: "shadow")
+    implementation "de.themoep:minedown:1.7.1-SNAPSHOT"
+
+    compileOnly "net.md-5:bungeecord-chat:1.19-R0.1-SNAPSHOT"
+}
