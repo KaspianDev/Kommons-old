@@ -16,10 +16,10 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.chat.builders;
+package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.chat.builders.SingleMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.StringBuilder;
+import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;

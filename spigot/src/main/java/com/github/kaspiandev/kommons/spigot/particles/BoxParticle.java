@@ -40,14 +40,21 @@ public class BoxParticle implements ParticleObject {
         this.corner2 = corner2;
     }
 
-    @NotNull @SuppressWarnings("java:S3776")
+    @NotNull
+    @SuppressWarnings("java:S3776")
     private List<Location> getLocations(double distance) {
         World world = corner1.getWorld();
         List<Location> locations = new ArrayList<>();
 
-        double[] xArr = {Math.min(corner1.getX(), corner2.getX() + 1), Math.max(corner1.getX(), corner2.getX() + 1)};
-        double[] yArr = {Math.min(corner1.getY(), corner2.getY()), Math.max(corner1.getY(), corner2.getY())};
-        double[] zArr = {Math.min(corner1.getZ(), corner2.getZ() + 1), Math.max(corner1.getZ(), corner2.getZ() + 1)};
+        double[] xArr = {
+                Math.min(corner1.getX(), corner2.getX() + 1), Math.max(corner1.getX(), corner2.getX() + 1)
+        };
+        double[] yArr = {
+                Math.min(corner1.getY(), corner2.getY()), Math.max(corner1.getY(), corner2.getY())}
+                ;
+        double[] zArr = {
+                Math.min(corner1.getZ(), corner2.getZ() + 1), Math.max(corner1.getZ(), corner2.getZ() + 1)
+        };
 
         for (double x = xArr[0]; x < xArr[1]; x += distance)
             for (double y : yArr)
@@ -93,4 +100,5 @@ public class BoxParticle implements ParticleObject {
             }
         }
     }
+
 }

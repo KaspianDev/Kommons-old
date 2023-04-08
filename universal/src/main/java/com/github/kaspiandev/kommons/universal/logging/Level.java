@@ -20,7 +20,8 @@ package com.github.kaspiandev.kommons.universal.logging;
 
 public enum Level {
 
-    ALL,
-    STARTUP,
-    MINIMAL
+    HIGH,
+    MEDIUM,
+    LOW;
+
 }

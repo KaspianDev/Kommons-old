@@ -26,7 +26,28 @@ import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("unused")
 public class LocationSerializer {
 
-    public boolean validate(@NotNull String location) {
+    public static String serialize(Location location) {
+        if (location == null || location.getWorld() == null) return null;
+        return location.getWorld().getName() +
+                ":" +
+                location.getBlockX() +
+                ":" +
+                location.getBlockY() +
+                ":" +
+                location.getBlockZ();
+    }
+
+    @Nullable
+    public static Location unserialize(@NotNull String location) {
+        String[] keys = location.split(":");
+        if (keys.length != 4) return null;
+        return new Location(Bukkit.getWorld(keys[0]),
+                Double.parseDouble(keys[1]),
+                Double.parseDouble(keys[2]),
+                Double.parseDouble(keys[3]));
+    }
+
+    public static boolean validate(@NotNull String location) {
         String[] keys = location.split(":");
         if (keys.length != 4) return false;
         if (Bukkit.getWorld(keys[0]) == null) return false;
@@ -41,21 +62,4 @@ public class LocationSerializer {
         return true;
     }
 
-    public static String serialize(Location location) {
-        if (location == null || location.getWorld() == null) return null;
-        return location.getWorld().getName() + ":" +
-                       location.getBlockX() + ":" +
-                       location.getBlockY() + ":" +
-                       location.getBlockZ();
-    }
-
-    @Nullable
-    public static Location unserialize(@NotNull String location) {
-        String[] keys = location.split(":");
-        if (keys.length != 4) return null;
-        return new Location(Bukkit.getWorld(keys[0]),
-                Double.parseDouble(keys[1]),
-                Double.parseDouble(keys[2]),
-                Double.parseDouble(keys[3]));
-    }
 }

@@ -34,8 +34,8 @@ public class ListenerManager {
 
     public ListenerManager(@NotNull Plugin plugin, String packageName) {
         this.plugin = plugin;
-        this.listenerSet = new Reflections(plugin.getClass()
-                .getPackageName() + '.' + packageName + '.').getSubTypesOf(Listener.class);
+        String prefix = plugin.getClass().getPackageName() + '.' + packageName + '.';
+        this.listenerSet = new Reflections(prefix).getSubTypesOf(Listener.class);
     }
 
     public void build() {

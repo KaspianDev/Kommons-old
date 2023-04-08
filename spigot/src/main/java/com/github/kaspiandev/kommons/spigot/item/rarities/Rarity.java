@@ -16,23 +16,13 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.enums.item;
+package com.github.kaspiandev.kommons.spigot.item.rarities;
 
-import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
+public enum Rarity {
 
-public class RarityManager {
-
-    private RarityManager() {}
-
-    public static boolean hasRarity(@NotNull ItemStack item) {
-        return (ItemRarities.valueOf(item.getType().name()).getMaterial() == item.getType());
-    }
-
-    public static Rarity getRarity(@NotNull ItemStack item) {
-        if (!item.getEnchantments().isEmpty()) return Rarity.RARE;
-        if (hasRarity(item)) return ItemRarities.valueOf(item.getType().name()).getRarity();
-        return Rarity.COMMON;
-    }
+    COMMON,
+    UNCOMMON,
+    RARE,
+    EPIC
 
 }

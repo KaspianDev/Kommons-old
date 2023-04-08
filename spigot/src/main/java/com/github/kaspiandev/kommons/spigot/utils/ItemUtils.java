@@ -18,7 +18,8 @@
 
 package com.github.kaspiandev.kommons.spigot.utils;
 
-import com.github.kaspiandev.kommons.spigot.enums.item.RarityManager;
+import com.github.kaspiandev.kommons.spigot.item.rarities.RarityManager;
+import com.github.kaspiandev.kommons.universal.utils.StringUtils;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;

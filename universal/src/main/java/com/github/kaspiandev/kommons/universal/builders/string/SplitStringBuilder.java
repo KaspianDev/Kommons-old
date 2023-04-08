@@ -16,7 +16,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.universal.builders;
+package com.github.kaspiandev.kommons.universal.builders.string;
 
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import com.github.kaspiandev.kommons.universal.string.Replacer;
@@ -26,10 +26,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class SplitStringBuilder implements StringBuilder<String> {
 
-    protected java.lang.StringBuilder message;
+    protected java.lang.StringBuilder message = new java.lang.StringBuilder();
 
     public SplitStringBuilder(String message) {
-        this.message = new java.lang.StringBuilder(message).append("\n");
+        this.message.append(message);
     }
 
     public SplitStringBuilder(List<String> messages) {

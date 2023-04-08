@@ -26,7 +26,6 @@ public class PDCWrapper {
 
     private final PersistentDataContainer pdc;
     private final NamespacedKey key;
-    private final PDCUtils pdcUtil = new PDCUtils();
 
     public PDCWrapper(PersistentDataContainer pdc, NamespacedKey key) {
         this.pdc = pdc;
@@ -42,38 +41,38 @@ public class PDCWrapper {
     }
 
     public boolean hasString() {
-        return pdcUtil.hasString(pdc, key);
+        return PDCUtils.hasString(pdc, key);
     }
 
     public boolean hasInteger() {
-        return pdcUtil.hasInteger(pdc, key);
+        return PDCUtils.hasInteger(pdc, key);
     }
 
     public boolean hasDouble() {
-        return pdcUtil.hasDouble(pdc, key);
+        return PDCUtils.hasDouble(pdc, key);
     }
 
     public void setString(String value) {
-        pdcUtil.setString(pdc, key, value);
+        PDCUtils.setString(pdc, key, value);
     }
 
     public void setInteger(Integer value) {
-        pdcUtil.setInteger(pdc, key, value);
+        PDCUtils.setInteger(pdc, key, value);
     }
 
     public void setDouble(Double value) {
-        pdcUtil.setDouble(pdc, key, value);
+        PDCUtils.setDouble(pdc, key, value);
     }
 
     public String getString() {
-        return pdcUtil.getString(pdc, key);
+        return PDCUtils.getString(pdc, key);
     }
 
     public Integer getInteger() {
-        return pdcUtil.getInteger(pdc, key);
+        return PDCUtils.getInteger(pdc, key);
     }
 
     public Double getDouble() {
-        return pdcUtil.getDouble(pdc, key);
+        return PDCUtils.getDouble(pdc, key);
     }
 }

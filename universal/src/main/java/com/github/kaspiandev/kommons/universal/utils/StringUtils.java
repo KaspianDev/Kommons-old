@@ -16,20 +16,30 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.utils;
+package com.github.kaspiandev.kommons.universal.utils;
+
+import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("unused")
-public class NumberUtils {
+public class StringUtils {
 
-    private NumberUtils() {}
+    private StringUtils() {}
 
-    public static boolean isNumber(String string) {
-        try {
-            Integer.parseInt(string);
-            return true;
-        } catch (NumberFormatException ex) {
-            return false;
+    @NotNull
+    public static String capitalizeEach(@NotNull String string) {
+        String[] words = string.split(" ");
+        StringBuilder builder = new StringBuilder();
+        for (String word : words) {
+            String first = word.substring(0, 1);
+            String afterfirst = word.substring(1);
+            builder.append(first.toUpperCase()).append(afterfirst).append(" ");
         }
+        return builder.toString().trim();
+    }
+
+    @NotNull
+    public static String clearUnderscore(@NotNull String id) {
+        return id.replace("_", " ").toLowerCase();
     }
 
 }

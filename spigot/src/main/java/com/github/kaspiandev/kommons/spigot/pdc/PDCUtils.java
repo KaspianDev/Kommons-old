@@ -67,10 +67,10 @@ public class PDCUtils {
     }
 
     public static void setPDCObject(PersistentDataContainer pdc, PDCObject<?> pdcObject) {
-        switch (pdcObject) {
-            case StringPDC stringPDC -> setString(pdc, stringPDC.getKey(), stringPDC.getValue());
-            case IntegerPDC integerPDC -> setInteger(pdc, integerPDC.getKey(), integerPDC.getValue());
-            default -> throw new IllegalStateException("Unexpected value: " + pdcObject);
+        if (pdcObject instanceof StringPDC stringPDC) {
+            setString(pdc, stringPDC.getKey(), stringPDC.getValue());
+        } else if (pdcObject instanceof IntegerPDC integerPDC) {
+            setInteger(pdc, integerPDC.getKey(), integerPDC.getValue());
         }
     }
 

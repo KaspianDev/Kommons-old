@@ -18,6 +18,7 @@
 
 package com.github.kaspiandev.kommons.spigot.builders;
 
+import com.github.kaspiandev.kommons.spigot.exceptions.NullLocationWorldException;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.World;
@@ -56,7 +57,7 @@ public class SoundBuilder {
 
     public void send(Location location) {
         World world = location.getWorld();
-        if (world == null) return;
+        if (world == null) throw new NullLocationWorldException(location);
         world.playSound(location, sound, volume, pitch);
     }
 

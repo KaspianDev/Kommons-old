@@ -101,7 +101,6 @@ public class ConfigBuilder {
         if (this.dumperSettings == null) this.dumperSettings = DumperSettings.DEFAULT;
         if (this.updaterSettings == null) this.updaterSettings = UpdaterSettings.DEFAULT;
         if (this.generalSettings == null) this.generalSettings = GeneralSettings.DEFAULT;
-        if (file == null || inputStream == null) return null;
 
         try {
             return YamlDocument.create(file, inputStream, generalSettings,

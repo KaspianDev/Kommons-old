@@ -18,8 +18,6 @@
 
 package com.github.kaspiandev.kommons.universal.locale;
 
-import org.jetbrains.annotations.NotNull;
-
 @SuppressWarnings("unused")
 public class CountryCode {
 
@@ -27,16 +25,6 @@ public class CountryCode {
 
     private CountryCode(String code) {
         this.code = code;
-    }
-
-    @NotNull
-    public static CountryCode of(@NotNull String code) {
-        return new CountryCode(code.toLowerCase());
-    }
-
-    @NotNull
-    public static CountryCode of(char[] code) {
-        return new CountryCode(String.valueOf(code).toLowerCase());
     }
 
     public String getCode() {

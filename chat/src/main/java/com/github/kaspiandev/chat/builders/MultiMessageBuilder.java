@@ -19,8 +19,8 @@
 package com.github.kaspiandev.chat.builders;
 
 import com.github.kaspiandev.chat.format.ColorFormatter;
-import com.github.kaspiandev.kommons.universal.builders.MultiStringBuilder;
-import com.github.kaspiandev.kommons.universal.builders.StringBuilder;
+import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
+import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 
 import java.util.List;

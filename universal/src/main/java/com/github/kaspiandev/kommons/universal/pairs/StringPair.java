@@ -41,4 +41,5 @@ public class StringPair extends Pair<String, String> {
     public String replace(String string) {
         return string.replace(getLeft(), getRight());
     }
+
 }

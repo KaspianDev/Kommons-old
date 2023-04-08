@@ -28,12 +28,12 @@ public class KLogger {
 
     public KLogger(String name) {
         logger = Logger.getLogger(name);
-        this.level = Level.ALL;
+        this.level = Level.MEDIUM;
     }
 
     public KLogger(Logger logger) {
         this.logger = logger;
-        this.level = Level.ALL;
+        this.level = Level.MEDIUM;
     }
 
     public KLogger(Level level, String name) {
@@ -47,21 +47,18 @@ public class KLogger {
     }
 
     public void log(String message) {
-        this.log(Level.ALL, message);
+        this.log(Level.MEDIUM, message);
     }
 
     public void log(Level level, String message) {
         switch (this.level) {
-            case ALL -> {
-                if (level == Level.ALL || level == Level.STARTUP || level == Level.MINIMAL)
+            case HIGH -> logger.info(message);
+            case MEDIUM -> {
+                if (level == Level.MEDIUM || level == Level.LOW)
                     logger.info(message);
             }
-            case MINIMAL -> {
-                if (level == Level.STARTUP || level == Level.MINIMAL)
-                    logger.info(message);
-            }
-            case STARTUP -> {
-                if (level == Level.STARTUP)
+            case LOW -> {
+                if (level == Level.LOW)
                     logger.info(message);
             }
         }

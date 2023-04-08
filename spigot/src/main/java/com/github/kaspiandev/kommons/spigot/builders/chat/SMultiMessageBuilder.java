@@ -16,38 +16,41 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.chat.builders;
+package com.github.kaspiandev.kommons.spigot.builders.chat;
 
-import com.github.kaspiandev.chat.builders.SplitMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.StringBuilder;
+import com.github.kaspiandev.chat.builders.MultiMessageBuilder;
+import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+
 import org.bukkit.command.CommandSender;
 
-@SuppressWarnings("unused")
-public class SSplitMessageBuilder extends SplitMessageBuilder implements StringBuilder<String> {
+import java.util.List;
 
-    public SSplitMessageBuilder(String message) {
-        super(message);
+@SuppressWarnings("unused")
+public class SMultiMessageBuilder extends MultiMessageBuilder implements StringBuilder<List<String>> {
+
+    public SMultiMessageBuilder(List<String> messages) {
+        super(messages);
     }
 
     public void send(CommandSender receiver) {
-        receiver.sendMessage(super.message.toString());
+        super.messages.forEach(receiver::sendMessage);
     }
 
     @Override
-    public SSplitMessageBuilder colorize() {
+    public SMultiMessageBuilder colorize() {
         super.colorize();
         return this;
     }
 
     @Override
-    public SSplitMessageBuilder replace(String from, String to) {
+    public SMultiMessageBuilder replace(String from, String to) {
         super.replace(from, to);
         return this;
     }
 
     @Override
-    public SSplitMessageBuilder replace(StringPair pair) {
+    public SMultiMessageBuilder replace(StringPair pair) {
         super.replace(pair);
         return this;
     }

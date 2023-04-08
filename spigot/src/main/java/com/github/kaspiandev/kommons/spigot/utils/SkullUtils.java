@@ -37,12 +37,22 @@ public class SkullUtils {
     private SkullUtils() {}
 
     @NotNull
+    public static PlayerProfile getProfileBase64(String base64) {
+        return getProfileBase64(base64, null);
+    }
+
+    @NotNull
     public static PlayerProfile getProfileBase64(String base64, @Nullable UUID uuid) {
         byte[] decodedBytes = Base64.getDecoder().decode(base64);
         String decodedJson = new String(decodedBytes);
         JsonObject jsonObject = JsonParser.parseString(decodedJson).getAsJsonObject();
         String url = jsonObject.get("textures.SKIN.url").getAsString();
         return getProfile(url, uuid);
+    }
+
+    @NotNull
+    public static PlayerProfile getProfile(String url) {
+        return getProfile(url, UUID.randomUUID());
     }
 
     @NotNull

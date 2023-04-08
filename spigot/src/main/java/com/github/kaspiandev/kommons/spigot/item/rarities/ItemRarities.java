@@ -16,7 +16,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.enums.item;
+package com.github.kaspiandev.kommons.spigot.item.rarities;
 
 import org.bukkit.Material;
 
@@ -24,6 +24,7 @@ import org.bukkit.Material;
 public enum ItemRarities {
 
     // Start UNCOMMON
+
     CREEPER_BANNER_PATTERN(Material.CREEPER_BANNER_PATTERN, Rarity.UNCOMMON),
     SKULL_BANNER_PATTERN(Material.SKULL_BANNER_PATTERN, Rarity.UNCOMMON),
     EXPERIENCE_BOTTLE(Material.EXPERIENCE_BOTTLE, Rarity.UNCOMMON),
@@ -38,7 +39,9 @@ public enum ItemRarities {
     HEART_OF_THE_SEA(Material.HEART_OF_THE_SEA, Rarity.UNCOMMON),
     TOTEM_OF_UNDYING(Material.TOTEM_OF_UNDYING, Rarity.UNCOMMON),
     ENCHANTED_BOOK(Material.ENCHANTED_BOOK, Rarity.UNCOMMON),
+
     // Start RARE
+
     BEACON(Material.BEACON, Rarity.RARE),
     CONDUIT(Material.CONDUIT, Rarity.RARE),
     END_CRYSTAL(Material.END_CRYSTAL, Rarity.RARE),
@@ -58,7 +61,9 @@ public enum ItemRarities {
     MUSIC_DISC_WARD(Material.MUSIC_DISC_WARD, Rarity.RARE),
     MUSIC_DISC_STRAD(Material.MUSIC_DISC_STRAD, Rarity.RARE),
     MUSIC_DISC_STAL(Material.MUSIC_DISC_STAL, Rarity.RARE),
+
     // Start EPIC
+
     FLOWER_BANNER_PATTERN(Material.FLOWER_BANNER_PATTERN, Rarity.EPIC),
     GLOBE_BANNER_PATTERN(Material.GLOBE_BANNER_PATTERN, Rarity.EPIC),
     MOJANG_BANNER_PATTERN(Material.MOJANG_BANNER_PATTERN, Rarity.EPIC),

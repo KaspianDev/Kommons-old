@@ -27,6 +27,8 @@ public interface ParticleObject {
 
     BukkitTask start(Plugin plugin, Particle particle, int amount, int delay,
                      double distance, boolean isStatic);
+
     void spawn(Plugin plugin, Particle particle, int amount,
-                     double distance, boolean isStatic);
+               double distance, boolean isStatic);
+
 }
