@@ -1,3 +1,5 @@
+# WARNING: Kommons should no be used as of yet. Things break on every commit!
+
 # Kommons
 ![Kommons](https://img.shields.io/badge/Kommons-Common%20library-%231a9fab)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KaspianDev/Kommons)
