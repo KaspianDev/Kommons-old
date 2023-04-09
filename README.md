@@ -1,4 +1,5 @@
 # Kommons
+![Kommons](https://img.shields.io/badge/Kommons-Common%20library-%231a9fab)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KaspianDev/Kommons)
 ![License](https://img.shields.io/github/license/KaspianDev/Kommons)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/KaspianDev/Kommons) \
