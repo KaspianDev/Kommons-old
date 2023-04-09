@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.chat.builders;
 
-import com.github.kaspiandev.chat.format.ColorFormatter;
+import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
@@ -37,7 +37,7 @@ public class MultiMessageBuilder extends MultiStringBuilder implements StringBui
     }
 
     public MultiMessageBuilder colorize() {
-        messages = ColorFormatter.legacy(messages);
+        messages = ColorUtils.legacy(messages);
         return this;
     }
 

@@ -1,3 +1,3 @@
 rootProject.name = 'Kommons'
-include 'spigot', 'packets', 'bungee', 'universal', 'console', 'chat', 'shared'
+include 'spigot', 'bungee', 'universal', 'console', 'chat'
 

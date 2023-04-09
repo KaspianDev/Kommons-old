@@ -16,7 +16,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.chat.format;
+package com.github.kaspiandev.chat.utils;
 
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -24,9 +24,9 @@ import net.md_5.bungee.api.chat.BaseComponent;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class ColorFormatter {
+public class ColorUtils {
 
-    private ColorFormatter() {}
+    private ColorUtils() {}
 
     /**
      * Colorize and format a {@link String} using MineDown.
@@ -34,7 +34,7 @@ public class ColorFormatter {
      * @param msg {@link String} to colorize.
      * @return Colored {@link String}
      */
-    public static String legacy(String msg) {
+    public static String string(String msg) {
         return BaseComponent.toLegacyText(new MineDown(msg).toComponent());
     }
 
@@ -44,9 +44,9 @@ public class ColorFormatter {
      * @param strings {@link List<String>} to colorize.
      * @return Colored {@link List<String>}
      */
-    public static List<String> legacy(List<String> strings) {
+    public static List<String> string(List<String> strings) {
         return strings.stream()
-                .map((line) -> BaseComponent.toLegacyText(new MineDown(line).toComponent()))
+                .map(ColorUtils::string)
                 .toList();
     }
 
@@ -68,7 +68,7 @@ public class ColorFormatter {
      */
     public static List<BaseComponent[]> component(List<String> strings) {
         return strings.stream()
-                .map((line) -> new MineDown(line).toComponent())
+                .map(ColorUtils::component)
                 .toList();
     }
 

@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.chat.builders;
 
-import com.github.kaspiandev.chat.format.ColorFormatter;
+import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SingleStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
@@ -38,7 +38,7 @@ public class SingleMessageBuilder extends SingleStringBuilder implements StringB
     }
 
     public SingleMessageBuilder colorize() {
-        message = ColorFormatter.legacy(message);
+        message = ColorUtils.legacy(message);
         return this;
     }
 

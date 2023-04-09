@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.chat.builders;
 
-import com.github.kaspiandev.chat.format.ColorFormatter;
+import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SplitStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
@@ -38,7 +38,7 @@ public class SplitMessageBuilder extends SplitStringBuilder implements StringBui
     }
 
     public SplitMessageBuilder colorize() {
-        message = new java.lang.StringBuilder(ColorFormatter.legacy(message.toString()));
+        message = new java.lang.StringBuilder(ColorUtils.legacy(message.toString()));
         return this;
     }
 
