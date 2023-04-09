@@ -1,4 +1,7 @@
 # Kommons
+![Lines of code](https://img.shields.io/tokei/lines/github/KaspianDev/Kommons)
+![License](https://img.shields.io/github/license/KaspianDev/Kommons)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/KaspianDev/Kommons)
 A master library for my java software.
 
 # Modules
