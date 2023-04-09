@@ -19,14 +19,13 @@
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.chat.builders.SingleMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 @SuppressWarnings("unused")
-public class ActionBarMessageBuilder extends SingleMessageBuilder implements StringBuilder<String> {
+public class ActionBarMessageBuilder extends SingleMessageBuilder {
 
     public ActionBarMessageBuilder(String message) {
         super(message);

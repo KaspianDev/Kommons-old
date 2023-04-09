@@ -21,11 +21,10 @@ package com.github.kaspiandev.chat.builders;
 import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SingleStringBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 
 @SuppressWarnings("unused")
-public class SingleMessageBuilder extends SingleStringBuilder implements StringBuilder<String> {
+public class SingleMessageBuilder extends SingleStringBuilder {
 
     /**
      * A message builder that uses just a single {@link String} unlike {@link MultiStringBuilder}.

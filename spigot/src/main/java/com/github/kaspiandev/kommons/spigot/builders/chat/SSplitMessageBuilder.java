@@ -19,12 +19,11 @@
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.chat.builders.SplitMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import org.bukkit.command.CommandSender;
 
 @SuppressWarnings("unused")
-public class SSplitMessageBuilder extends SplitMessageBuilder implements StringBuilder<String> {
+public class SSplitMessageBuilder extends SplitMessageBuilder {
 
     public SSplitMessageBuilder(String message) {
         super(message);
