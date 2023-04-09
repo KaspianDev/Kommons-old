@@ -38,7 +38,7 @@ public class SplitMessageBuilder extends SplitStringBuilder implements StringBui
     }
 
     public SplitMessageBuilder colorize() {
-        message = new java.lang.StringBuilder(ColorUtils.legacy(message.toString()));
+        message = new java.lang.StringBuilder(ColorUtils.string(message.toString()));
         return this;
     }
 

@@ -38,7 +38,7 @@ public class SingleMessageBuilder extends SingleStringBuilder implements StringB
     }
 
     public SingleMessageBuilder colorize() {
-        message = ColorUtils.legacy(message);
+        message = ColorUtils.string(message);
         return this;
     }
 

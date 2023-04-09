@@ -37,7 +37,7 @@ public class MultiMessageBuilder extends MultiStringBuilder implements StringBui
     }
 
     public MultiMessageBuilder colorize() {
-        messages = ColorUtils.legacy(messages);
+        messages = ColorUtils.string(messages);
         return this;
     }
 
