@@ -20,13 +20,12 @@ package com.github.kaspiandev.chat.builders;
 
 import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class MultiMessageBuilder extends MultiStringBuilder implements StringBuilder<List<String>> {
+public class MultiMessageBuilder extends MultiStringBuilder {
 
     public MultiMessageBuilder(String message) {
         super(message);

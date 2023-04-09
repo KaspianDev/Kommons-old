@@ -19,15 +19,12 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.chat.builders.MultiMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 
-import java.util.List;
-
 @SuppressWarnings("unused")
-public class BMultiMessageBuilder extends MultiMessageBuilder implements StringBuilder<List<String>> {
+public class BMultiMessageBuilder extends MultiMessageBuilder {
 
     public BMultiMessageBuilder(String message) {
         super(message);

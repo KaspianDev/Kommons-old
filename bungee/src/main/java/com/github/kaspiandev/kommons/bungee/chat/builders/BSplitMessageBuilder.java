@@ -19,13 +19,12 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.chat.builders.SplitMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 
 @SuppressWarnings("unused")
-public class BSplitMessageBuilder extends SplitMessageBuilder implements StringBuilder<String> {
+public class BSplitMessageBuilder extends SplitMessageBuilder {
 
     public BSplitMessageBuilder(String message) {
         super(message);

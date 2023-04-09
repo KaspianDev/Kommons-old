@@ -19,13 +19,12 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.chat.builders.SingleMessageBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 
 @SuppressWarnings("unused")
-public class BSingleMessageBuilder extends SingleMessageBuilder implements StringBuilder<String> {
+public class BSingleMessageBuilder extends SingleMessageBuilder {
 
     public BSingleMessageBuilder(String message) {
         super(message);

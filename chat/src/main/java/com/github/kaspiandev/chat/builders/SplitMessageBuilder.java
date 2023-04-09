@@ -21,11 +21,10 @@ package com.github.kaspiandev.chat.builders;
 import com.github.kaspiandev.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SplitStringBuilder;
-import com.github.kaspiandev.kommons.universal.builders.string.StringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 
 @SuppressWarnings("unused")
-public class SplitMessageBuilder extends SplitStringBuilder implements StringBuilder<String> {
+public class SplitMessageBuilder extends SplitStringBuilder {
 
     /**
      * A message builder that uses just a single {@link String} unlike {@link MultiStringBuilder}.
