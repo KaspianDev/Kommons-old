@@ -46,7 +46,8 @@ public class ItemUtils {
         } else {
             builder.append(ChatColor.WHITE);
         }
-        return builder.append(StringUtils.capitalizeEach(
-                StringUtils.clearUnderscore(item.getType().name()))).toString();
+        String itemName = item.getType().name().toLowerCase();
+        builder.append(StringUtils.capitalizeEach(StringUtils.clearUnderscore(itemName)));
+        return builder.toString();
     }
 }

@@ -16,30 +16,20 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.universal.utils;
+package com.github.kaspiandev.kommons.universal.placeholders;
 
-import org.jetbrains.annotations.NotNull;
+import com.github.kaspiandev.kommons.universal.pairs.Pair;
 
-@SuppressWarnings("unused")
-public class StringUtils {
+public class Placeholder extends Pair<String, Object> {
 
-    private StringUtils() {}
-
-    @NotNull
-    public static String capitalizeEach(@NotNull String string) {
-        String[] words = string.split(" ");
-        StringBuilder builder = new StringBuilder();
-        for (String word : words) {
-            String first = word.substring(0, 1);
-            String afterfirst = word.substring(1);
-            builder.append(first.toUpperCase()).append(afterfirst).append(" ");
-        }
-        return builder.toString().trim();
+    public Placeholder(String left, Object right) {
+        super(left, right);
     }
 
-    @NotNull
-    public static String clearUnderscore(@NotNull String id) {
-        return id.replace("_", " ");
+    public String apply(String string) {
+        return (super.right instanceof CharSequence sequence)
+                ? string.replace(string, sequence)
+                : string.replace(string, String.valueOf(super.right));
     }
 
 }

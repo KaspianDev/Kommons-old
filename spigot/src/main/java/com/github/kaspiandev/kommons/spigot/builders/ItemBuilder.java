@@ -111,6 +111,7 @@ public class ItemBuilder {
         return this;
     }
 
+    @SuppressWarnings("java:S117")
     public ItemBuilder setTextureURL(String URL) {
         ((SkullMeta) this.itemMeta).setOwnerProfile(SkullUtils.getProfile(URL));
         return this;

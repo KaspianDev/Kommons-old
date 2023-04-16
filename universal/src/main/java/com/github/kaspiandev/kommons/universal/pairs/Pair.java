@@ -21,8 +21,8 @@ package com.github.kaspiandev.kommons.universal.pairs;
 @SuppressWarnings("unused")
 public class Pair<L, R> {
 
-    private L left;
-    private R right;
+    protected L left;
+    protected R right;
 
     /**
      * Create a {@link Pair} of two elements with the

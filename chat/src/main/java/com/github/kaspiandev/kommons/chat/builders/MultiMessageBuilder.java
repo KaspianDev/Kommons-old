@@ -16,37 +16,38 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.kommons.spigot.builders.chat;
+package com.github.kaspiandev.kommons.chat.builders;
 
-import com.github.kaspiandev.kommons.chat.builders.SplitMessageBuilder;
+import com.github.kaspiandev.kommons.chat.utils.ColorUtils;
+import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
-import org.bukkit.command.CommandSender;
+
+import java.util.List;
 
 @SuppressWarnings("unused")
-public class SSplitMessageBuilder extends SplitMessageBuilder {
+public class MultiMessageBuilder extends MultiStringBuilder {
 
-    public SSplitMessageBuilder(String message) {
+    public MultiMessageBuilder(String message) {
         super(message);
     }
 
-    public void send(CommandSender receiver) {
-        receiver.sendMessage(super.message.toString());
+    public MultiMessageBuilder(List<String> messages) {
+        super(messages);
     }
 
-    @Override
-    public SSplitMessageBuilder colorize() {
-        super.colorize();
+    public MultiMessageBuilder colorize() {
+        messages = ColorUtils.string(messages);
         return this;
     }
 
     @Override
-    public SSplitMessageBuilder replace(String from, String to) {
+    public MultiMessageBuilder replace(String from, String to) {
         super.replace(from, to);
         return this;
     }
 
     @Override
-    public SSplitMessageBuilder replace(StringPair pair) {
+    public MultiMessageBuilder replace(StringPair pair) {
         super.replace(pair);
         return this;
     }

@@ -16,40 +16,32 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.chat.builders;
-
-import com.github.kaspiandev.chat.utils.ColorUtils;
-import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+package com.github.kaspiandev.kommons.universal.placeholders;
 
 import java.util.List;
 
-@SuppressWarnings("unused")
-public class MultiMessageBuilder extends MultiStringBuilder {
+public class PlaceholderManager {
 
-    public MultiMessageBuilder(String message) {
-        super(message);
+    private String message;
+
+    public PlaceholderManager(String message) {
+        this.message = message;
     }
 
-    public MultiMessageBuilder(List<String> messages) {
-        super(messages);
-    }
-
-    public MultiMessageBuilder colorize() {
-        messages = ColorUtils.string(messages);
+    public PlaceholderManager addPlaceholder(Placeholder placeholder) {
+        this.message = placeholder.apply(message);
         return this;
     }
 
-    @Override
-    public MultiMessageBuilder replace(String from, String to) {
-        super.replace(from, to);
+    public PlaceholderManager addPlaceholders(List<Placeholder> placeholders) {
+        for (Placeholder placeholder : placeholders) {
+            this.message = placeholder.apply(message);
+        }
         return this;
     }
 
-    @Override
-    public MultiMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
-        return this;
+    public String build() {
+        return this.message;
     }
 
 }

@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
-import com.github.kaspiandev.chat.builders.MultiMessageBuilder;
+import com.github.kaspiandev.kommons.chat.builders.MultiMessageBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import org.bukkit.command.CommandSender;
 

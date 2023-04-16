@@ -16,7 +16,7 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.chat.utils;
+package com.github.kaspiandev.kommons.chat.utils;
 
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.BaseComponent;

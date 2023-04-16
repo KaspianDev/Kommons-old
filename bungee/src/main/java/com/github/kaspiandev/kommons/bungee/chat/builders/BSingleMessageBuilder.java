@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
-import com.github.kaspiandev.chat.builders.SingleMessageBuilder;
+import com.github.kaspiandev.kommons.chat.builders.SingleMessageBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;

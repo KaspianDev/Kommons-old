@@ -16,9 +16,9 @@
  *     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.github.kaspiandev.chat.builders;
+package com.github.kaspiandev.kommons.chat.builders;
 
-import com.github.kaspiandev.chat.utils.ColorUtils;
+import com.github.kaspiandev.kommons.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SplitStringBuilder;
 import com.github.kaspiandev.kommons.universal.pairs.StringPair;
