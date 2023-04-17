@@ -20,6 +20,9 @@ Current modules:
 # License
 Kommons are licensed under [**GNU Affero General Public License**](LICENSE).
 
+# Project size history
+- 17.04.2023 - 3400 lines
+
 ```
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
