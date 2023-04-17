@@ -17,11 +17,11 @@ Current modules:
  - Bungee - Only for Bungeecord API.
  - Console - Contains utilities for CLI based programs.
 
-# License
-Kommons are licensed under [**GNU Affero General Public License**](LICENSE).
-
 # Project size history
 - 17.04.2023 - 3400 lines
+
+# License
+Kommons are licensed under [**GNU Affero General Public License**](LICENSE).
 
 ```
 This program is free software: you can redistribute it and/or modify
