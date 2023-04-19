@@ -4,7 +4,7 @@
 ![Kommons](https://img.shields.io/badge/Kommons-Common%20library-%2316939e)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KaspianDev/Kommons)
 ![License](https://img.shields.io/github/license/KaspianDev/Kommons)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/KaspianDev/Kommons) \
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/KaspianDev/Kommons)
 
 # Modules
 Kommons include a bunch of modules which can be used independently.
