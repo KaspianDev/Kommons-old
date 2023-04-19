@@ -44,4 +44,12 @@ public class PlaceholderManager {
         return this.message;
     }
 
+    public <T> T buildAs(Class<T> clazz) {
+        return clazz.isInstance(this.message) ? clazz.cast(this.message) : null;
+    }
+
+    public <T> T buildAs(Class<T> clazz, T def) {
+        return clazz.isInstance(this.message) ? clazz.cast(this.message) : def;
+    }
+
 }
