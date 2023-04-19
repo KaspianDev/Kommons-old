@@ -1,11 +1,10 @@
 # WARNING: Kommons should no be used as of yet. Things break on every commit!
 
-# Kommons
+# Kommons - A common library for my java software.
 ![Kommons](https://img.shields.io/badge/Kommons-Common%20library-%2316939e)
 ![Lines of code](https://img.shields.io/tokei/lines/github/KaspianDev/Kommons)
 ![License](https://img.shields.io/github/license/KaspianDev/Kommons)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/KaspianDev/Kommons) \
-A common library for my java software.
 
 # Modules
 Kommons include a bunch of modules which can be used independently.
