@@ -18,43 +18,25 @@
 
 package com.github.kaspiandev.kommons.universal.builders.string;
 
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import com.github.kaspiandev.kommons.universal.string.Replacer;
 
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class MultiStringBuilder implements StringBuilder<List<String>> {
 
     protected List<String> messages;
 
-    /**
-     * Create a {@link MultiStringBuilder} using a single message.
-     * Usually not recommended, use {@link SingleStringBuilder} instead.
-     *
-     * @param message Message to initiate the list with.
-     * @see SingleStringBuilder
-     */
     public MultiStringBuilder(String message) {
         this.messages = Collections.singletonList(message);
     }
 
-    /**
-     * Create a {@link MultiStringBuilder} using a list of messages.
-     *
-     * @param messages Messages to initiate the list with.
-     */
     public MultiStringBuilder(List<String> messages) {
         this.messages = messages;
     }
 
-    /**
-     * Replace all Strings from messages with something else using {@link Replacer#replace(String, String)}.
-     *
-     * @param from {@link String} that will be replaced.
-     * @param to   {@link String} that replaces parameter {@code from}.
-     * @return Original {@link MultiStringBuilder}.
-     */
     public MultiStringBuilder replace(String from, String to) {
         messages = messages.stream()
                 .map((message) -> new Replacer(message).replace(from, to).build())
@@ -62,24 +44,11 @@ public class MultiStringBuilder implements StringBuilder<List<String>> {
         return this;
     }
 
-    /**
-     * Replace all Strings from messages with something else using {@link Replacer#replace(StringPair)}.
-     *
-     * @param pair {@link StringPair} of two elements.
-     * @return Original {@link MultiStringBuilder}.
-     */
-    public MultiStringBuilder replace(StringPair pair) {
-        messages = messages.stream()
-                .map((message) -> new Replacer(message).replace(pair).build())
-                .toList();
+    public MultiStringBuilder apply(Placeholder placeholder) {
+        messages.forEach(placeholder::apply);
         return this;
     }
 
-    /**
-     * Finalize the {@link MultiStringBuilder}.
-     *
-     * @return {@link List<String>} with all changes applied.
-     */
     public List<String> build() {
         return messages;
     }

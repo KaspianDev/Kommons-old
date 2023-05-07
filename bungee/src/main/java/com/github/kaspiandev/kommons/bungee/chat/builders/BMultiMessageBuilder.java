@@ -19,9 +19,11 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.kommons.chat.builders.MultiMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
+
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class BMultiMessageBuilder extends MultiMessageBuilder {
@@ -30,14 +32,8 @@ public class BMultiMessageBuilder extends MultiMessageBuilder {
         super(message);
     }
 
-    public void send(CommandSender receiver) {
-        super.messages.forEach((line) -> receiver.sendMessage(TextComponent.fromLegacyText(line)));
-    }
-
-    @Override
-    public BMultiMessageBuilder colorize() {
-        super.colorize();
-        return this;
+    public BMultiMessageBuilder(List<String> message) {
+        super(message);
     }
 
     @Override
@@ -47,9 +43,24 @@ public class BMultiMessageBuilder extends MultiMessageBuilder {
     }
 
     @Override
-    public BMultiMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public BMultiMessageBuilder colorize() {
+        super.colorize();
         return this;
+    }
+
+    @Override
+    public BMultiMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
+    }
+
+    @Override
+    public List<String> build() {
+        return super.build();
+    }
+
+    public void send(CommandSender receiver) {
+        super.messages.forEach((line) -> receiver.sendMessage(TextComponent.fromLegacyText(line)));
     }
 
 }

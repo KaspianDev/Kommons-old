@@ -23,64 +23,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * CommandLineParser sorts arguments as other command line tools do.
- */
 @SuppressWarnings("unused")
 public class CommandLineParser {
 
     private final Map<String, String> options = new HashMap<>();
     private final List<String> booleans = new ArrayList<>();
 
-    /**
-     * Instantiates a new Command line parser.
-     *
-     * @param args the args
-     */
     public CommandLineParser(String[] args) {
         parse(args);
     }
 
-    /**
-     * Gets option.
-     *
-     * @param name the name
-     * @return the option
-     */
     public String getOption(String name) {
         return options.get(name);
     }
 
-    /**
-     * Gets option.
-     *
-     * @param shortName the short name
-     * @param longName  the long name
-     * @return the option
-     */
     public String getOption(String shortName, String longName) {
         if (options.containsKey(shortName)) {
             return options.get(shortName);
         } else return options.getOrDefault(longName, null);
     }
 
-    /**
-     * Gets boolean option.
-     *
-     * @param name the name
-     * @return the boolean option
-     */
     public boolean getBooleanOption(String name) {
         return options.containsKey(name);
     }
 
-    /**
-     * Gets boolean option.
-     *
-     * @param shortName the short name
-     * @param longName  the long name
-     * @return the boolean option
-     */
     public boolean getBooleanOption(String shortName, String longName) {
         return booleans.contains(shortName) || booleans.contains(longName);
     }

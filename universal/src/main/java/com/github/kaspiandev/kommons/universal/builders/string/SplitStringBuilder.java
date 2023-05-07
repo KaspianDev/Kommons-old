@@ -18,7 +18,7 @@
 
 package com.github.kaspiandev.kommons.universal.builders.string;
 
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import com.github.kaspiandev.kommons.universal.string.Replacer;
 
 import java.util.List;
@@ -41,8 +41,8 @@ public class SplitStringBuilder implements StringBuilder<String> {
         return this;
     }
 
-    public SplitStringBuilder replace(StringPair pair) {
-        message = new java.lang.StringBuilder(new Replacer(message.toString()).replace(pair).build());
+    public SplitStringBuilder apply(Placeholder placeholder) {
+        message = new java.lang.StringBuilder(placeholder.apply(message.toString()));
         return this;
     }
 

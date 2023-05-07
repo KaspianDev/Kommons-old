@@ -19,7 +19,7 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.kommons.chat.builders.SingleMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 
@@ -30,8 +30,10 @@ public class BSingleMessageBuilder extends SingleMessageBuilder {
         super(message);
     }
 
-    public void send(CommandSender receiver) {
-        receiver.sendMessage(TextComponent.fromLegacyText(super.message));
+    @Override
+    public BSingleMessageBuilder replace(String from, String to) {
+        super.replace(from, to);
+        return this;
     }
 
     @Override
@@ -41,15 +43,18 @@ public class BSingleMessageBuilder extends SingleMessageBuilder {
     }
 
     @Override
-    public BSingleMessageBuilder replace(String from, String to) {
-        super.replace(from, to);
+    public BSingleMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
         return this;
     }
 
     @Override
-    public BSingleMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
-        return this;
+    public String build() {
+        return super.build();
+    }
+
+    public void send(CommandSender receiver) {
+        receiver.sendMessage(TextComponent.fromLegacyText(super.message));
     }
 
 }

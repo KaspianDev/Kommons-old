@@ -18,9 +18,6 @@
 
 package com.github.kaspiandev.kommons.universal.string;
 
-import com.github.kaspiandev.kommons.universal.pairs.Pair;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
-
 import java.util.List;
 
 @SuppressWarnings("unused")
@@ -28,22 +25,10 @@ public class MultiReplacer {
 
     private List<String> list;
 
-    /**
-     * Constructor of the {@link MultiReplacer}.
-     *
-     * @param list {@link List} to work on.
-     */
     public MultiReplacer(List<String> list) {
         this.list = list;
     }
 
-    /**
-     * Replace String.
-     *
-     * @param from {@link String} that will be replaced.
-     * @param to   {@link String} that replaces parameter {@code from}.
-     * @return Original {@link MultiReplacer} to continue working on.
-     */
     public MultiReplacer replace(String from, String to) {
         list = list.stream()
                 .map((string) -> string.replace(from, to))
@@ -51,25 +36,6 @@ public class MultiReplacer {
         return this;
     }
 
-    /**
-     * Replace String but using {@link Pair}.
-     *
-     * @param replacingPair {@link Pair} Object to replace Left with Right.
-     * @return Original {@link MultiReplacer} to continue working on.
-     * @see Pair
-     */
-    public MultiReplacer replace(StringPair replacingPair) {
-        list = list.stream()
-                .map((string) -> string.replace(replacingPair.getLeft(), replacingPair.getRight()))
-                .toList();
-        return this;
-    }
-
-    /**
-     * Build the {@link MultiReplacer} to get the resulting {@link List}.
-     *
-     * @return {@link List} with all previously done modifications.
-     */
     public List<String> build() {
         return this.list;
     }

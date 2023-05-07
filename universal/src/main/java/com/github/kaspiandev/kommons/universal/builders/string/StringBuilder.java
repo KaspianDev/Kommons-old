@@ -18,12 +18,12 @@
 
 package com.github.kaspiandev.kommons.universal.builders.string;
 
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 
 public interface StringBuilder<T> {
 
     StringBuilder<T> replace(String from, String to);
-    StringBuilder<T> replace(StringPair pair);
+    StringBuilder<T> apply(Placeholder placeholder);
     T build();
 
 }

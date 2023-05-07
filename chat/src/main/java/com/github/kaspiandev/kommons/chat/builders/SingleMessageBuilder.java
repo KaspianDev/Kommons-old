@@ -21,24 +21,13 @@ package com.github.kaspiandev.kommons.chat.builders;
 import com.github.kaspiandev.kommons.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SingleStringBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 
 @SuppressWarnings("unused")
 public class SingleMessageBuilder extends SingleStringBuilder {
 
-    /**
-     * A message builder that uses just a single {@link String} unlike {@link MultiStringBuilder}.
-     *
-     * @param message Message to initiate the object with.
-     * @see MultiStringBuilder {@code MessageBuilder} using a {@code List} instead.
-     */
     public SingleMessageBuilder(String message) {
         super(message);
-    }
-
-    public SingleMessageBuilder colorize() {
-        message = ColorUtils.string(message);
-        return this;
     }
 
     @Override
@@ -48,8 +37,18 @@ public class SingleMessageBuilder extends SingleStringBuilder {
     }
 
     @Override
-    public SingleMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public SingleMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
+    }
+
+    @Override
+    public String build() {
+        return super.build();
+    }
+
+    public SingleMessageBuilder colorize() {
+        message = ColorUtils.string(message);
         return this;
     }
 

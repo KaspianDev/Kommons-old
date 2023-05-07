@@ -24,46 +24,23 @@ public class Pair<L, R> {
     protected L left;
     protected R right;
 
-    /**
-     * Create a {@link Pair} of two elements with the
-     * same type.
-     *
-     * @param left  Left part of the {@link Pair}
-     * @param right Right part of the {@link Pair}
-     */
     public Pair(L left, R right) {
         this.left = left;
         this.right = right;
     }
 
-    /**
-     * Get left side of the {@link Pair}.
-     *
-     * @return Left side of the {@link Pair}
-     */
     public L getLeft() {
         return left;
     }
 
-    /**
-     * Get right side of the {@link Pair}.
-     *
-     * @return Right side of the {@link Pair}
-     */
     public R getRight() {
         return right;
     }
 
-    /**
-     * Set left side of the {@link Pair}.
-     */
     public void setLeft(L value) {
         this.left = value;
     }
 
-    /**
-     * Set right side of the {@link Pair}.
-     */
     public void setRight(R value) {
         this.right = value;
     }

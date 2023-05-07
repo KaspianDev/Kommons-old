@@ -19,9 +19,11 @@
 package com.github.kaspiandev.kommons.bungee.chat.builders;
 
 import com.github.kaspiandev.kommons.chat.builders.SplitMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
+
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class BSplitMessageBuilder extends SplitMessageBuilder {
@@ -30,14 +32,8 @@ public class BSplitMessageBuilder extends SplitMessageBuilder {
         super(message);
     }
 
-    public void send(CommandSender receiver) {
-        receiver.sendMessage(TextComponent.fromLegacyText(super.message.toString()));
-    }
-
-    @Override
-    public BSplitMessageBuilder colorize() {
-        super.colorize();
-        return this;
+    public BSplitMessageBuilder(List<String> messages) {
+        super(messages);
     }
 
     @Override
@@ -47,9 +43,24 @@ public class BSplitMessageBuilder extends SplitMessageBuilder {
     }
 
     @Override
-    public BSplitMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public BSplitMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
         return this;
+    }
+
+    @Override
+    public String build() {
+        return super.build();
+    }
+
+    @Override
+    public BSplitMessageBuilder colorize() {
+        super.colorize();
+        return this;
+    }
+
+    public void send(CommandSender receiver) {
+        receiver.sendMessage(TextComponent.fromLegacyText(super.message.toString()));
     }
 
 }

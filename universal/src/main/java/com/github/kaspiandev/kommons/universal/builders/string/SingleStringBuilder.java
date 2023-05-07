@@ -18,52 +18,30 @@
 
 package com.github.kaspiandev.kommons.universal.builders.string;
 
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import com.github.kaspiandev.kommons.universal.string.Replacer;
 
+@SuppressWarnings("unused")
 public class SingleStringBuilder implements StringBuilder<String> {
 
     protected String message;
 
-    /**
-     * A message builder that uses just a single {@link String} unlike {@link MultiStringBuilder}.
-     *
-     * @param message Message to initiate the object with.
-     * @see MultiStringBuilder {@code MessageBuilder} using a {@code List} instead.
-     */
     public SingleStringBuilder(String message) {
         this.message = message;
     }
 
-    /**
-     * Replace {@code String} from the message with something else using {@link Replacer#replace(String, String)}.
-     *
-     * @param from {@link String} that will be replaced.
-     * @param to {@link String} that replaces parameter {@code from}.
-     * @return Original {@link SingleStringBuilder}.
-     */
     public SingleStringBuilder replace(String from, String to) {
         message = new Replacer(message).replace(from, to).build();
         return this;
     }
 
-    /**
-     * Replace {@code String} from the message with something else using {@link Replacer#replace(StringPair)}.
-     *
-     * @param pair {@link StringPair} of two elements.
-     * @return Original {@link SingleStringBuilder}.
-     */
-    public SingleStringBuilder replace(StringPair pair) {
-        message = new Replacer(message).replace(pair).build();
+    public SingleStringBuilder apply(Placeholder placeholder) {
+        message = placeholder.apply(message);
         return this;
     }
 
-    /**
-     * Finalize the {@link SingleStringBuilder}.
-     *
-     * @return {@link String} with all changes applied.
-     */
     public String build() {
         return message;
     }
+
 }

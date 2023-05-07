@@ -20,7 +20,7 @@ package com.github.kaspiandev.kommons.chat.builders;
 
 import com.github.kaspiandev.kommons.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 
 import java.util.List;
 
@@ -35,11 +35,6 @@ public class MultiMessageBuilder extends MultiStringBuilder {
         super(messages);
     }
 
-    public MultiMessageBuilder colorize() {
-        messages = ColorUtils.string(messages);
-        return this;
-    }
-
     @Override
     public MultiMessageBuilder replace(String from, String to) {
         super.replace(from, to);
@@ -47,8 +42,18 @@ public class MultiMessageBuilder extends MultiStringBuilder {
     }
 
     @Override
-    public MultiMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public MultiMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
+    }
+
+    @Override
+    public List<String> build() {
+        return super.build();
+    }
+
+    public MultiMessageBuilder colorize() {
+        messages = ColorUtils.string(messages);
         return this;
     }
 

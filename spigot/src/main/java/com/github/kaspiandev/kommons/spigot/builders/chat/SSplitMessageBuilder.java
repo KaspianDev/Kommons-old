@@ -19,7 +19,7 @@
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.kommons.chat.builders.SplitMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import org.bukkit.command.CommandSender;
 
 @SuppressWarnings("unused")
@@ -29,8 +29,16 @@ public class SSplitMessageBuilder extends SplitMessageBuilder {
         super(message);
     }
 
-    public void send(CommandSender receiver) {
-        receiver.sendMessage(super.message.toString());
+    @Override
+    public SSplitMessageBuilder replace(String from, String to) {
+        super.replace(from, to);
+        return this;
+    }
+
+    @Override
+    public SSplitMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
     }
 
     @Override
@@ -40,15 +48,12 @@ public class SSplitMessageBuilder extends SplitMessageBuilder {
     }
 
     @Override
-    public SSplitMessageBuilder replace(String from, String to) {
-        super.replace(from, to);
-        return this;
+    public String build() {
+        return super.build();
     }
 
-    @Override
-    public SSplitMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
-        return this;
+    public void send(CommandSender receiver) {
+        receiver.sendMessage(super.message.toString());
     }
 
 }

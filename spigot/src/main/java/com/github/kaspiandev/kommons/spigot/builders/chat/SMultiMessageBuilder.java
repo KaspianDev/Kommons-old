@@ -19,7 +19,7 @@
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.kommons.chat.builders.MultiMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -27,18 +27,12 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class SMultiMessageBuilder extends MultiMessageBuilder {
 
+    public SMultiMessageBuilder(String message) {
+        super(message);
+    }
+
     public SMultiMessageBuilder(List<String> messages) {
         super(messages);
-    }
-
-    public void send(CommandSender receiver) {
-        super.messages.forEach(receiver::sendMessage);
-    }
-
-    @Override
-    public SMultiMessageBuilder colorize() {
-        super.colorize();
-        return this;
     }
 
     @Override
@@ -48,9 +42,24 @@ public class SMultiMessageBuilder extends MultiMessageBuilder {
     }
 
     @Override
-    public SMultiMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public SMultiMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
         return this;
+    }
+
+    @Override
+    public SMultiMessageBuilder colorize() {
+        super.colorize();
+        return this;
+    }
+
+    @Override
+    public List<String> build() {
+        return super.build();
+    }
+
+    public void send(CommandSender receiver) {
+        super.messages.forEach(receiver::sendMessage);
     }
 
 }

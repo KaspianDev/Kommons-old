@@ -28,44 +28,20 @@ public class ColorUtils {
 
     private ColorUtils() {}
 
-    /**
-     * Colorize and format a {@link String} using MineDown.
-     *
-     * @param msg {@link String} to colorize.
-     * @return Colored {@link String}
-     */
     public static String string(String msg) {
         return BaseComponent.toLegacyText(new MineDown(msg).toComponent());
     }
 
-    /**
-     * Colorize and format a {@link List<String>} using MineDown.
-     *
-     * @param strings {@link List<String>} to colorize.
-     * @return Colored {@link List<String>}
-     */
     public static List<String> string(List<String> strings) {
         return strings.stream()
                 .map(ColorUtils::string)
                 .toList();
     }
 
-    /**
-     * Colorize and format a {@link String} using MineDown.
-     *
-     * @param msg {@link String} to colorize.
-     * @return Colored {@link String}
-     */
     public static BaseComponent[] component(String msg) {
         return new MineDown(msg).toComponent();
     }
 
-    /**
-     * Colorize and format a {@link List<String>} using MineDown.
-     *
-     * @param strings {@link List<String>} to colorize.
-     * @return Colored {@link List<String>}
-     */
     public static List<BaseComponent[]> component(List<String> strings) {
         return strings.stream()
                 .map(ColorUtils::component)

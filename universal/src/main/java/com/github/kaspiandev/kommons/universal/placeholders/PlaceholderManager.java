@@ -18,8 +18,12 @@
 
 package com.github.kaspiandev.kommons.universal.placeholders;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class PlaceholderManager {
 
     private String message;
@@ -28,26 +32,29 @@ public class PlaceholderManager {
         this.message = message;
     }
 
-    public PlaceholderManager addPlaceholder(Placeholder placeholder) {
+    public PlaceholderManager add(Placeholder placeholder) {
         this.message = placeholder.apply(message);
         return this;
     }
 
-    public PlaceholderManager addPlaceholders(List<Placeholder> placeholders) {
+    public PlaceholderManager add(List<Placeholder> placeholders) {
         for (Placeholder placeholder : placeholders) {
             this.message = placeholder.apply(message);
         }
         return this;
     }
 
+    @NotNull
     public String build() {
         return this.message;
     }
 
+    @Nullable
     public <T> T buildAs(Class<T> clazz) {
         return clazz.isInstance(this.message) ? clazz.cast(this.message) : null;
     }
 
+    @NotNull
     public <T> T buildAs(Class<T> clazz, T def) {
         return clazz.isInstance(this.message) ? clazz.cast(this.message) : def;
     }

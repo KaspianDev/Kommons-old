@@ -19,7 +19,7 @@
 package com.github.kaspiandev.kommons.spigot.builders.chat;
 
 import com.github.kaspiandev.kommons.chat.builders.SingleMessageBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
@@ -31,8 +31,16 @@ public class ActionBarMessageBuilder extends SingleMessageBuilder {
         super(message);
     }
 
-    public void send(Player player) {
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(super.message));
+    @Override
+    public ActionBarMessageBuilder replace(String from, String to) {
+        super.replace(from, to);
+        return this;
+    }
+
+    @Override
+    public ActionBarMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
     }
 
     @Override
@@ -42,15 +50,12 @@ public class ActionBarMessageBuilder extends SingleMessageBuilder {
     }
 
     @Override
-    public ActionBarMessageBuilder replace(String from, String to) {
-        super.replace(from, to);
-        return this;
+    public String build() {
+        return super.build();
     }
 
-    @Override
-    public ActionBarMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
-        return this;
+    public void send(Player player) {
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(super.message));
     }
 
 }

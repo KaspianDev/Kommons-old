@@ -21,24 +21,19 @@ package com.github.kaspiandev.kommons.chat.builders;
 import com.github.kaspiandev.kommons.chat.utils.ColorUtils;
 import com.github.kaspiandev.kommons.universal.builders.string.MultiStringBuilder;
 import com.github.kaspiandev.kommons.universal.builders.string.SplitStringBuilder;
-import com.github.kaspiandev.kommons.universal.pairs.StringPair;
+import com.github.kaspiandev.kommons.universal.placeholders.Placeholder;
+
+import java.util.List;
 
 @SuppressWarnings("unused")
 public class SplitMessageBuilder extends SplitStringBuilder {
 
-    /**
-     * A message builder that uses just a single {@link String} unlike {@link MultiStringBuilder}.
-     *
-     * @param message Message to initiate the object with.
-     * @see MultiStringBuilder {@code MessageBuilder} using a {@code List} instead.
-     */
     public SplitMessageBuilder(String message) {
         super(message);
     }
 
-    public SplitMessageBuilder colorize() {
-        message = new java.lang.StringBuilder(ColorUtils.string(message.toString()));
-        return this;
+    public SplitMessageBuilder(List<String> messages) {
+        super(messages);
     }
 
     @Override
@@ -48,8 +43,18 @@ public class SplitMessageBuilder extends SplitStringBuilder {
     }
 
     @Override
-    public SplitMessageBuilder replace(StringPair pair) {
-        super.replace(pair);
+    public SplitMessageBuilder apply(Placeholder placeholder) {
+        super.apply(placeholder);
+        return this;
+    }
+
+    @Override
+    public String build() {
+        return super.build();
+    }
+
+    public SplitMessageBuilder colorize() {
+        message = new java.lang.StringBuilder(ColorUtils.string(message.toString()));
         return this;
     }
 
